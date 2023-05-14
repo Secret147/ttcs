@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cart</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="/styles/signup.css" type="text/css">
+        <link rel="stylesheet" href="/styles/base.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/font/fontawesome-free-6.3.0-web/fontawesome-free-6.3.0-web/css/all.css">
+    </head>
+    <body>
+        <div class="allform" id="myForm">
+            <div class="form_login">
+                <div class="form_login_header">
+                    <h1>Đăng kí</h1>
+                    <div class="form_login_header-cancel js-cancel" id="cancelbutton">
+                        <a href="/"><i class="fa-solid fa-xmark"></i></a>
+                    </div>
+                </div>
+                <div class="form_login_main">
+                    <form method="POST" th:action="@{/signup}" >
+                        <div class="form_email topbottom">
+                            <input type="email" name="email" class="boxinput" placeholder="Email" required>
+                        </div>
+                        <p th:text="${error}" style="color: red;font-size: 16px; "></p>
+                        <div class="form_firstName topbottom" >                      
+                            <input type="text" name="firstName"  class="boxinput" placeholder="First name" required><br>
+                        </div>
+                        
+                        <div class="form_lastName topbottom">
+                            <input type="text" name="lastName"  class="boxinput" placeholder="Last name" required><br>
+                        </div>
+                        
+                        <div class="form_lastName topbottom">                         
+                            <input type="password" name="password"  class="boxinput" placeholder="Password" required><br>
+                        </div>
+                        <p th:text="${passlength}" style="color: red;font-size: 16px; "></p>
+                        
+                        
+                        <div class="form_checkbox">
+                            <div class="box">
+                                <input type="checkbox" class="checkbox" required>
+                                <p>I read and agree to the
+                                    <a href="#">Terms and Conditions</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form_submit">
+                            <input class="submitbutton topbottom" type="submit" value="Đăng ký">
+                        </div>
+                        <p style="font-size: 16px;text-align: center;margin-top: 34px;">Bạn đã có tài khoản? Đăng nhập <a href="/logins/check">tại đây</a></p>
+                        <div class="form_switch-login ">
+                            <div class="signupwith">
+                                <p class="icon_size-small">Sign up with</p>
+                                <a href="facebook.com">
+                                    <i class="fa-brands fa-facebook icon_size"></i>
+                                </a>
+                                <a href="facebook.com">
+                                    <i class="fa-brands fa-google icon_size"></i>
+                                </a>
+                                <a href="facebook.com">
+                                    <i class="fa-brands fa-microsoft icon_size"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

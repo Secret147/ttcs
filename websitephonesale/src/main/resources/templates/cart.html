@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	<link rel="stylesheet" th:href="@{/styles/main.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/styles/base.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/styles/cart.css}" type="text/css">
+	<link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+	<link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+	<link th:href="@{https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap}"
+		rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/styles/font/fontawesome-free-6.3.0-web/fontawesome-free-6.3.0-web/css/all.css}">
+
+</head>
+
+<body>
+	<div id="main">
+		<!------------------------------------------------header ------------------------------------------------------------------------------------------>
+		<div class="header">
+			<div class="header_list">
+				<div class="header_list-logo">
+					<a href="/home/view" class="header_img">
+						<img th:src="@{/styles/img/go-mobile-plans.png}" alt="">
+					</a>
+
+				</div>
+				<div class="header_list-menu">
+					<i class="fa-solid fa-bars bar"></i>
+					<p class="danhmuc">Danh mục</p>
+					<div class="header_list-menulist">
+						<ul class="header_list-menulist-list">
+							<li class="header_list-menulist-item">
+								<div class="header_menu-item">
+									<div class="item-first">
+										<i class="fa-sharp fa-solid fa-mobile-screen mobile"></i>
+										<p>Điện thoại</p>
+									</div>
+									<i class="fa-solid fa-chevron-right chevron-right"></i>
+								</div>
+							</li>
+							<li class="header_list-menulist-item">
+								<div class="header_menu-item">
+									<div class="item-first">
+										<i class="fa-solid fa-laptop mobile"></i>
+										<p>Laptop</p>
+									</div>
+									<i class="fa-solid fa-chevron-right chevron-right"></i>
+								</div>
+							</li>
+							<li class="header_list-menulist-item">
+								<div class="header_menu-item">
+									<div class="item-first">
+										<i class="fa-regular fa-clock mobile"></i>
+										<p>Đồng hồ</p>
+									</div>
+									<i class="fa-solid fa-chevron-right chevron-right"></i>
+								</div>
+							</li>
+							<li class="header_list-menulist-item">
+								<div class="header_menu-item">
+									<div class="item-first">
+										<i class="fa-solid fa-headphones mobile"></i>
+										<p>Tai nghe</p>
+									</div>
+									<i class="fa-solid fa-chevron-right chevron-right"></i>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+				<div class="header_list-search">
+					<div class="header_list-searchbox">
+
+						<div class="searchbox_input">
+							<input type="text" name="search" placeholder="Bạn cần tìm gì">
+						</div>
+						<div class="seach-icon">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</div>
+					</div>
+
+				</div>
+				<div class="header_cart">
+					<a href="/cart/views">
+						<i class="fa-solid fa-cart-shopping"></i>
+					</a>
+				</div>
+				<div class="header_user">
+
+					<i class="fa-regular fa-circle-user"></i>
+					<p class="user_img" th:text="${session.username}"></p>
+				</div>
+				<div class="header_order">
+					<a class="order_product" href="/checkorder/views">
+						<i class="fa-solid fa-truck"></i>
+					</a>
+				</div>
+			</div>
+			<div class="header_logout">
+
+				<button type="submit" onclick="hideout()">
+					<p>Đăng xuất</p>
+
+			</div>
+		</div>
+		<div class="alert_main hide">
+			<div class="alert_main-container">
+				<div class="alert_main_box">
+					<div class="alert_main_box_in">
+						<div class="alert_main_front">
+							<p class="noalertred">Bạn có chắc chắn muốn đăng xuất? </p>
+
+						</div>
+						<div class="alert_main_back">
+							<div class="alert_main_back_btn">
+								<a onclick="hide()" style="cursor: pointer;">Hủy</a>
+							</div>
+							<form method="POST" th:action="@{/logins/logout}" class="js-formlogout ">
+								<button class="js-btn-confirmCancel">Xác nhận</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- -------------------------------------------phan noi dung------------------------------------------------- -->
+		<div class="container">
+			<div class="cart_main">
+				<div class="cart-item" th:each="cartitem:${cartitems}">
+					<img th:src="${cartitem.img}" alt="">
+					<div class="cart-item-infor">
+						<div class="cart_item-infor-main">
+							<p class="name" th:text="${cartitem.brand}"></p>
+
+							<p class="cost" th:text="'Giá: '+ ${cartitem.cost} +' đ'"></p>
+						</div>
+					</div>
+					<div class="cart-item-button">
+						<div class="cart_item-button-main">
+
+							<a th:href="@{'/order/views/' + ${cartitem.product_id}}" class="order">Đặt hàng</a>
+
+							<button class="delete" onclick="hideout3()">Xóa khỏi giỏ hàng</button>
+						</div>
+					</div>
+					<div class="alert_main3 hide">
+						<div class="alert_main-container">
+							<div class="alert_main_box">
+								<div class="alert_main_box_in">
+									<div class="alert_main_front">
+										<p class="noalertred">Bạn có chắc chắn muốn xóa sản phẩm khỏi giỏ hàng? </p>
+
+									</div>
+									<div class="alert_main_back">
+										<div class="alert_main_back_btn">
+											<a onclick="hide3()" style="cursor: pointer;">Hủy</a>
+										</div>
+										<a class="cssaccept" th:href="@{'/cart/delete/' + ${cartitem.id}}">Xác nhận</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- ----------------------------------------------footer-------------------------------------------->
+		<div class="footer">
+			<div class="footer_main">
+				<div class="footer_front">
+					<div class="footer_support" style="margin-left: 48px;">
+						<h4>Hỗ trợ - Dịch vụ</h4>
+						<ul>
+							<li><a href="#">Mua hàng trả góp</a></li>
+							<li><a href="#">Hướng dẫn đặt hàng và thanh toán</a></li>
+							<li><a href="#">Tra cứu đơn hàng</a></li>
+							<li><a href="#">Chính sách bảo hành</a></li>
+							<li><a href="#">Phạm vi, điều khoản gói bảo hành mở rộng</a></li>
+							<li><a href="#">Chính sách bảo mật</a></li>
+							<li><a href="#">Chính sách giải quyết khiếu nại</a></li>
+							<li><a href="#">Điều khoản mua bán hàng hóa</a></li>
+							<li><a href="#">Câu hỏi thường gặp</a></li>
+						</ul>
+					</div>
+					<div class="footer_support">
+						<h4>Thông Tin - Liên Hệ</h4>
+						<ul>
+							<li><a href="#">Bán hàng Online</a></li>
+							<li><a href="#">Chăm sóc Khách hàng</a></li>
+							<li><a href="#">Hỗ trợ Kỹ thuật</a></li>
+							<li><a href="#">Hỗ trợ Bảo hành & Sửa chữa</a></li>
+							<li><a href="#">Liên hệ khối văn phòng</a></li>
+							<li><a href="#">Trung tâm bảo hành</a></li>
+
+						</ul>
+					</div>
+					<div class="footer_support free">
+						<h4>Tổng đài hỗ trợ miễn phí</h4>
+						<ul>
+							<li><a class="sdt" href="#" style="font-size: 18px;">0865955830</a></li>
+
+						</ul>
+					</div>
+					<div class="footer_support thanhtoan">
+						<h4>Phương thức thanh toán</h4>
+						<ul>
+							<li><a href="#"><img th:src="@{/styles/img/icon/logo-jcb.png}" alt=""></a></li>
+							<li><a href="#"><img th:src="@{/styles/img/icon/logo-samsungpay.png}" alt=""></a></li>
+							<li><a href="#"><img th:src="@{/styles/img/icon/logo-atm.png}" alt=""></a></li>
+							<li><a href="#"><img th:src="@{/styles/img/icon/logo-master.png}" alt=""></a></li>
+							<li><a href="#"><img th:src="@{/styles/img/icon/logo-visa.png}" alt=""></a></li>
+							<li><a href="#"><img th:src="@{/styles/img/icon/logo-vnpay.png}" alt=""></a></li>
+						</ul>
+					</div>
+					<div class="footer_support thanhtoan">
+						<h4>Kết nối với chúng tôi</h4>
+						<ul>
+							<li><a href="#"><img th:src="@{/styles/img/icon/cellphones-facebook.png}" alt=""></a></li>
+							<li><a href="#"><img th:src="@{/styles/img/icon/cellphones-instagram.png}" alt=""></a></li>
+							<li><a href="#"><img th:src="@{/styles/img/icon/cellphones-tiktok.png}" alt=""></a></li>
+							<li><a href="#"><img th:src="@{/styles/img/icon/cellphones-youtube.png}" alt=""></a></li>
+							<li><a href="#"><img th:src="@{/styles/img/icon/cellphones-zalo.png}" alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer_bottom">
+					<p>2023. Học viện công nghệ Bưu chính Viễn thông</p>
+					<p>Trụ sở chính: 122 Hoàng Quốc Việt, Quận Cầu Giấy, Hà Nội </p>
+					<p>Cơ sở đào tạo tại Hà Nội: Km10, Đường Nguyễn Trãi, Quận Hà Đông, Hà Nội</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script th:src="@{/styles/javascript/main.js}"></script>
+</body>
+
+</html>

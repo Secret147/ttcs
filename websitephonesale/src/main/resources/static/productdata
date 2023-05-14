@@ -1,0 +1,12 @@
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('1', 'iPhone 14 Pro Max (128GB) - Chính hãng VN/A', '26990000', '/styles/img/iphone14promax.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('2', 'iPhone 11 (128GB) - Chính hãng VN/A', '12190000', '/styles/img/iphone11.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('3', 'iPhone 13 (128GB) - Chính hãng VN/A', '16790000', '/styles/img/iphone13.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('4', 'iPhone 14 Plus (128GB) - Chính hãng VN/A', '21790000', '/styles/img/iphone14plus-yellow.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('5', 'Redmi Note 12 (4GB/128GB) - Chính hãng', '4690000', '/styles/img/redminote12-0.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('6', 'Redmi Note 12 Pro 5G (8GB/256GB) - Chính hãng', '9190000', '/styles/img/redminote12pro5g-0.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('7', 'Redmi 12C (4GB/64GB) - Chính hãng', '2990000', '/styles/img/redmi12c.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('8', 'Redmi Note 11 Pro (8GB/128GB) - Chính hãng', '5990000', '/styles/img/note-11pro-7.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('9', 'Samsung Galaxy S23 Plus - 8GB/256GB - Chính hãng', '23190000', '/styles/img/Samsung s23 plus-xang.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('10', 'Samsung Galaxy A54 5G (8GB/128GB) - Chính hãng', '10490000', '/styles/img/Samsung a54.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('11', 'Samsung Galaxy Z Fold4 - 256GB - Chính hãng', '35790000', '/styles/img/samsung z-flip-4.webp');
+INSERT INTO `phonesale`.`product` (`id`, `brand`, `cost`, `img`) VALUES ('12', 'Samsung Galaxy A34 5G (8GB/128GB) - Chính hãng', '8490000', '/styles/img/samsung a34a54.webp');

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cart</title>
+        <meta charset="utf-8">
+        <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+        
+    </head>
+    <body>
+        <div class="allform js-formsignup" id="myForm">
+            <div class="form_login">
+                <div class="form_login_header">
+                    <h1>Đăng kí</h1>
+                    <div class="form_login_header-cancel js-cancel" id="cancelbutton">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="form_login_main">
+                    <form method="POST" th:action="@{/signup}" th:object="${infor}">
+                        <div class="form_email topbottom">
+                            <input type="email" name="email" th:text="*{email}" class="boxinput" placeholder="Email" required><br>
+                        </div>
+                        <div class="form_firstName topbottom" >                      
+                            <input type="text" name="firstName" th:text="*{first_name}" class="boxinput" placeholder="First name" required><br>
+                        </div>
+                        <div class="form_lastName topbottom">
+                            <input type="text" name="lastName" th:text="*{last_name}" class="boxinput" placeholder="Last name" required><br>
+                        </div>
+                        <div class="form_lastName topbottom">                         
+                            <input type="password" name="password" th:text="*{password}" class="boxinput" placeholder="Password" required><br>
+                        </div>
+                        <div class="form_checkbox">
+                            <div class="box">
+                                <input type="checkbox" class="checkbox">
+                                <p>I read and agree to the
+                                    <a href="#">Terms and Conditions</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form_submit">
+                            <input class="submitbutton topbottom" type="submit" value="Submit">
+                        </div>
+                        <div class="form_switch-login ">
+                            <div class="signupwith">
+                                <p class="icon_size-small">Sign up with</p>
+                                <a href="facebook.com">
+                                    <i class="fa-brands fa-facebook icon_size"></i>
+                                </a>
+                                <a href="facebook.com">
+                                    <i class="fa-brands fa-google icon_size"></i>
+                                </a>
+                                <a href="facebook.com">
+                                    <i class="fa-brands fa-microsoft icon_size"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

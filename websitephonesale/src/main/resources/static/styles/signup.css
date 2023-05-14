@@ -1,0 +1,143 @@
+
+.allform{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgb(67 87 98);
+}
+.form_login{
+    width: 30%;
+    background-color: rgb(210, 232, 241);
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.form_login_header:first-child{
+    border-top-right-radius: 10px ;
+    border-top-left-radius: 10px;
+}
+.form_login_header{
+    width: 100%;
+    height: 68px;
+    background-color:  rgb(114, 206, 242);
+    position: relative;
+
+}
+.form_login_header h1{
+    
+    text-align: center;
+    line-height: 66px;
+    font-size: 30px;
+    color:black;
+    
+}
+.form_login_header-cancel{
+    position: absolute;
+    top:0;
+    right: 0;
+    font-size: 20px;
+    padding: 8px 12px;
+    
+}
+form_login_header-cancel i{
+	color: black;
+}
+.fa-xmark{
+	color: black;
+	
+}
+.fa-xmark:hover{
+    opacity:0.8;
+}
+.form_login_main{
+    margin: 32px;
+}
+label{
+    font-size: 16px;
+
+}
+.topbottom{
+    margin: 12px 0 0 0px;
+}
+.boxinput{
+    height: 48px;
+    width: 100%;
+    border-radius: 18px;
+    border: none;
+    outline: none;
+    text-indent: 16px;
+    font-size: 16px;
+}
+.form_checkbox p{
+    display: inline;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.form_checkbox{
+    margin-top: 32px;
+    display: flex;
+    line-height: 20px;
+}
+.checkbox{
+    margin-right: 8px;
+    padding-top: 10px;
+}
+.box{
+    margin: 0 auto;
+    height: 20px;
+}
+.form_submit{
+    margin-top: 32px;
+    display: flex;
+
+}
+.submitbutton{
+    padding: 12px 48px 14px 48px;
+    border-radius: 24px;
+    margin: 0 auto;
+    font-size: 20px;
+    background-color: rgb(114, 206, 242);
+    color: black;
+    border: none;
+    font-weight: bold;
+   
+}
+.submitbutton:hover{
+    opacity: 0.6;
+}
+.icon_size{
+    font-size: 28px;
+    margin: 0 4px;
+    color:black;
+    text-decoration: none;
+   
+}
+.signupwith a{
+    text-decoration: none;
+}
+.form_switch-login{
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 32px;
+}
+.form_switch-login p{
+    margin-bottom: 4px;
+    text-align: center;
+}
+.icon_size-small{
+    font-size: 16px;
+}
+.signupwith{
+    
+}
+.fa-microsoft:hover,
+.fa-google:hover,
+.fa-facebook:hover{
+    opacity: 0.6;
+}
+.form-active{
+    display:block;
+    
+}
